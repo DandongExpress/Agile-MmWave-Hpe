@@ -1,22 +1,26 @@
 agile-mmwave-hpe
 > Physics-guided mmWave preprocessing for agile human pose estimation. Replaces learned front-ends with deterministic SSP/MCP/HMSF modules, reducing parameters by 55.7–88.9% while enabling real-time deployment on Raspberry Pi 5.
-[Paper & Supplementary]](https://arxiv.org/abs/2603.08236)**   
+[Paper & Supplementary]](https://arxiv.org/abs/2603.08236)**
+
 ---
-Overview
+**Overview**
 Existing mmWave-based HPE systems are over-parameterized yet underperform vision baselines — we show this mismatch originates primarily in learned front-end preprocessing modules. This repository provides a physics-guided alternative that replaces those modules with three deterministic components:
 SSP (Spatial Structure Preservation) — range–angle masking based on anthropometric priors
 MCP (Motion Continuity Preservation) — Doppler-based dominant velocity extraction and local consistency filtering
 HMSF (Hierarchical Multi-Scale Fusion) — 3D pooling aligned with torso, limb, and joint scales
 A lightweight MLP regressor then maps the resulting compact descriptor to 3D joint coordinates. The full pipeline runs at 18.2 FPS on a Raspberry Pi 5 with only 7.3 MB peak RAM.
+
 ---
-Results
+
+**Results**
 Method	Params (M)	MAJPE (mm) ↓	PA-MAJPE (mm) ↓	FLOPs (M)
 HuprModel	324.9	65.37	58.11	454
 MVDoppler-Pose	36.7	69.71	66.56	84
 Ours (Full)	5.1	64.16	60.29	14
 Evaluated on the HuPR benchmark. See the paper for full comparisons and bidirectional replacement experiments.
+
 ---
-Getting Started
+**Getting Started**
 Requirements
 ```bash
 pip install -r requirements.txt
@@ -40,8 +44,10 @@ python export_onnx.py --checkpoint checkpoints/balanced.pth
 python deploy/run_rpi.py --model balanced.onnx
 ```
 See `deploy/README.md` for full hardware setup and radar configuration details.
+
 ---
-Runtime Profiles
+
+**Runtime Profiles**
 All profiles share the same 5.1M-parameter back end; only front-end hyperparameters differ.
 Profile	FLOPs (M)	Peak RAM (MB)	MAJPE (mm)
 Ultra-Light	2.1	2.8	72.43
@@ -50,8 +56,9 @@ Balanced	5.8	7.3	64.16
 High-Precision	8.2	10.5	62.87
 Ultra-Precision	11.4	14.2	62.15
 Profiles are selected at deployment time — no retraining required.
+
 ---
-Repository Structure
+**Repository Structure**
 ```
 agile-mmwave-hpe/
 ├── configs/          # Hyperparameter profiles (yaml)
@@ -64,7 +71,7 @@ agile-mmwave-hpe/
 └── export_onnx.py
 ```
 ---
-Citation
+**Citation**
 If you find this work useful, please cite:
 ```bibtex
 @article{zheng2026learn,
@@ -75,7 +82,7 @@ If you find this work useful, please cite:
 }
 ```
 ---
-Acknowledgement
+**Acknowledgement**
 This research is funded by the Department of Computer Science, University of Warwick.
 ---
 License
