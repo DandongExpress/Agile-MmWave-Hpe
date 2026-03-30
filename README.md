@@ -1,8 +1,9 @@
-agile-mmwave-hpe
+**Agile-Mmwave-Hpe**
 > Physics-guided mmWave preprocessing for agile human pose estimation. Replaces learned front-ends with deterministic SSP/MCP/HMSF modules, reducing parameters by 55.7–88.9% while enabling real-time deployment on Raspberry Pi 5.
 [Paper & Supplementary]](https://arxiv.org/abs/2603.08236)**
 
 ---
+
 **Overview**
 Existing mmWave-based HPE systems are over-parameterized yet underperform vision baselines — we show this mismatch originates primarily in learned front-end preprocessing modules. This repository provides a physics-guided alternative that replaces those modules with three deterministic components:
 SSP (Spatial Structure Preservation) — range–angle masking based on anthropometric priors
@@ -55,7 +56,7 @@ Light	3.5	4.6	67.28
 Balanced	5.8	7.3	64.16
 High-Precision	8.2	10.5	62.87
 Ultra-Precision	11.4	14.2	62.15
-Profiles are selected at deployment time — no retraining required.
+
 
 ---
 **Repository Structure**
