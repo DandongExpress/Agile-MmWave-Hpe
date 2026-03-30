@@ -48,14 +48,19 @@ See `deploy/README.md` for full hardware setup and radar configuration details.
 
 ---
 
-**Runtime Profiles**
+## Runtime Profiles
+
 All profiles share the same 5.1M-parameter back end; only front-end hyperparameters differ.
-Profile	FLOPs (M)	Peak RAM (MB)	MAJPE (mm)
-Ultra-Light	2.1	2.8	72.43
-Light	3.5	4.6	67.28
-Balanced	5.8	7.3	64.16
-High-Precision	8.2	10.5	62.87
-Ultra-Precision	11.4	14.2	62.15
+
+| Profile | FLOPs (M) | Peak RAM (MB) | MAJPE (mm) |
+|---|---|---|---|
+| Ultra-Light | 2.1 | 2.8 | 72.43 |
+| Light | 3.5 | 4.6 | 67.28 |
+| **Balanced** | **5.8** | **7.3** | **64.16** |
+| High-Precision | 8.2 | 10.5 | 62.87 |
+| Ultra-Precision | 11.4 | 14.2 | 62.15 |
+
+Profiles are selected at deployment time — no retraining required.
 
 
 ---
@@ -88,3 +93,4 @@ This research is funded by the Department of Computer Science, University of War
 ---
 License
 This project is released under the MIT License.
+
