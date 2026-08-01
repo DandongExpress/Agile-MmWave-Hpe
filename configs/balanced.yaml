@@ -1,0 +1,31 @@
+seed: 42
+device: auto
+data:
+  root: data/HuPR
+  train_file: train.npz
+  val_file: val.npz
+  test_file: test.npz
+  num_workers: 0
+model:
+  range_bins: 64
+  angle_bins: 64
+  doppler_bins: 16
+  num_joints: 17
+  range_resolution_m: 0.0417
+  angle_min_deg: -60.0
+  angle_max_deg: 60.0
+  max_velocity_mps: 4.16
+  spatial_bounds_m: [0.4, 3.0]
+  spatial_bounds_deg: [-50.0, 50.0]
+  velocity_bounds_mps: [0.2, 2.5]
+  velocity_std_bounds_mps: [0.0, 1.2]
+  local_window_radius: 1
+  coarse_kernel: [4, 4, 2]
+  medium_kernel: [2, 2, 2]
+  hidden_dims: [2304, 2176]
+train:
+  batch_size: 16
+  epochs: 80
+  learning_rate: 0.0003
+  weight_decay: 0.00001
+  checkpoint_dir: checkpoints
