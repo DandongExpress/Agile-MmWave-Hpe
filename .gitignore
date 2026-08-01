@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.venv/
+data/HuPR/
+checkpoints/*.pth
+checkpoints/*.onnx
+*.onnx
