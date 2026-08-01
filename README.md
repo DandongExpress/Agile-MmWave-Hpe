@@ -132,10 +132,6 @@ python -m pytest tests
 
 The test suite covers deterministic front-end behavior, model tensor shapes, a train/evaluate checkpoint round trip, and ONNX export using synthetic RAD data.
 
-## Hero Image
-
-A production-ready prompt for a photorealistic project hero image is available at [assets/IMAGE_PROMPT.md](assets/IMAGE_PROMPT.md). Generate the image as `assets/hero-mmwave-pose.jpg`, then uncomment the hero block near the top of this README.
-
 ## Citation
 
 ```bibtex
