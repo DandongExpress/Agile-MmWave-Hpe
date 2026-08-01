@@ -29,7 +29,7 @@ save it as assets/hero-mmwave-pose.jpg and uncomment the block below.
 -->
 
 <p align="center">
-  <img src="https://arxiv.org/html/2603.08236v1/overall_.png" alt="Physics-guided SSP, MCP, HMSF, and pose regression pipeline" width="92%">
+  <img src="assets/visualization.png"  width="99%">
 </p>
 
 ## Why This Matters
